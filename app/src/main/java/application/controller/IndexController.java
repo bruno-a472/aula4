@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class IndexController {
     @RequestMapping("/")
     public String index(Model ui,
-            @RequestParam("nome") String n) {
+            @RequestParam(name="nome", required=false, default="World") String n) {
         ui.addAttribute("msg", "Olá " + n + "!!!");
         return "/WEB-INF/home.jsp";
     }
